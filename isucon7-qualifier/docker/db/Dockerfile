@@ -9,6 +9,11 @@ RUN \
   gb vendor restore && \
   make && \
   bin/gen-initial-dataset
+#  touch /etc/my.cnf && \
+#  echo [mysqld]>> /etc/my.cnf && \
+#  echo slow_query_log=ON>> /etc/my.cnf && \
+#  echo long_query_time = 5>> /etc/my.cnf && \
+#  echo slow_query_log_file = /var/log/mysql/slow.log>> /etc/my.cnf
 
 FROM mysql:5.7
 
